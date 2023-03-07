@@ -47,6 +47,7 @@ export const ProposeForm = ({ loanType }) => {
       _collateral_deposit:
         loanType == 1 ? convertToWei(borrowOrCollateralAmount) : 0,
     },
+    msgValue: principalType == 0 && convertToWei(borrowOrCollateralAmount),
   });
 
   const {

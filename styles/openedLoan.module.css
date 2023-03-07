@@ -1,0 +1,27 @@
+.main {
+  width: 100%;
+}
+
+.openedLoan {
+  width: 100%;
+}
+
+.loanGraphics {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 50px;
+}
+
+.openedLoan h3 {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 26px;
+  margin: 50px 0px;
+}
+
+.loans {
+  display: flex;
+}

@@ -1,17 +1,123 @@
 .loanBoxEven {
   background-color: #fff;
-  width: 20%;
-  margin: 10px;
+  width: 300px;
+  margin: 20px;
   border-radius: 16px;
+  box-shadow: 0 0 10px 0 #0a9a00c7;
+  /* position: relative; */
+  padding-bottom: 15px;
 }
 
 .loanBoxOdd {
   background-color: #0f3210;
-  width: 20%;
-  margin: 10px;
+  width: 300px;
+  margin: 20px;
   border-radius: 16px;
+  box-shadow: 0 0 10px 0 #0a9a00c7;
+  /* position: relative; */
+  padding-bottom: 15px;
 }
 
-.loanBox h3 {
+.loanBox {
+  background-color: #0f3210;
+  width: 22%;
+  margin: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px 0 #0a9a00c7;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.id {
   color: #0a9a00;
+  text-align: center;
+  font-size: 22px;
+}
+
+.tidy {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.one {
+  background-color: #0f3210;
+  padding: 10px;
+  width: 30%;
+}
+
+.one h4 {
+  color: #20f903;
+  margin: 5px 0px;
+}
+
+.one p {
+  color: #fff;
+}
+
+.two {
+  background-color: #0a9a00;
+  padding: 10px;
+  width: 30%;
+}
+
+.two h4 {
+  color: #20f903;
+  margin: 5px 0px;
+}
+
+.two p {
+  color: #0f3210;
+  font-weight: 600;
+}
+
+.three {
+  margin-top: 30px;
+  background-color: #20f903;
+  padding: 10px;
+  width: 30%;
+}
+
+.three h4 {
+  color: #fff;
+  margin: 5px 0px;
+}
+
+.three p {
+  color: #0f3210;
+  font-weight: 600;
+}
+
+.four {
+  margin-top: 30px;
+  background-color: #0f3210;
+  padding: 10px;
+  width: 30%;
+}
+
+.four h4 {
+  color: #0a9a00;
+  margin: 5px 0px;
+}
+
+.four p {
+  color: #fff;
+  font-weight: 600;
+}
+
+.five {
+  margin-top: 30px;
+  background-color: #0a9a00;
+  padding: 10px;
+  width: 30%;
+}
+
+.five h4 {
+  color: #000;
+  margin: 5px 0px;
+}
+
+.five p {
+  color: #fff;
+  font-weight: 600;
 }

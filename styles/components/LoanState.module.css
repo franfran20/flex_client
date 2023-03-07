@@ -1,0 +1,131 @@
+.allDetails {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.collateralRequired {
+  display: flex;
+}
+
+.collateralRequired p {
+  font-size: 24px;
+}
+
+.collateralRequired span {
+  font-size: 30px;
+}
+
+.approveAndAccept {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.approve {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.approve input {
+  background-color: #e5efe4;
+  border: none;
+  font-size: 16px;
+  padding: 8px 4px;
+  margin: 0px 10px 0px 0px;
+  border-radius: 8px;
+}
+
+.approve input:focus {
+  outline: none;
+}
+
+.approve button {
+  padding: 12px 22px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+  margin-right: 10px;
+}
+
+.accept {
+  padding: 12px 22px;
+  background-color: #20f903;
+  color: #0f3210;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+}
+
+.loanInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  margin-top: 20px;
+}
+
+.loanInfo div {
+  margin: 10px 20px;
+}
+
+.loanInfo h4 {
+  font-size: 20px;
+  margin: 5px 0px;
+}
+
+.loanInfo p {
+  color: #20f903;
+  font-size: 22px;
+  margin: 5px 0px;
+}
+
+.renegotiateAndDeactivate {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.renegotiateAndDeactivate button {
+  margin: 10px;
+}
+
+.renego {
+  padding: 12px 22px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+}
+
+.deactivate {
+  padding: 12px 22px;
+  background-color: #f90303;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  margin: 10px;
+}
+
+.change {
+  padding: 12px 22px;
+  background-color: #20f903;
+  color: #0f3210;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  margin: 10px;
+}

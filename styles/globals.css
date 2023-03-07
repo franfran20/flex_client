@@ -12,3 +12,7 @@ body {
 button {
   font-family: "DM Sans", sans-serif;
 }
+
+a {
+  text-decoration: none;
+}

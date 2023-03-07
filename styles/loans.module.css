@@ -17,8 +17,15 @@
 }
 
 .loans {
+  padding: 10px 60px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.noLoans {
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
 }

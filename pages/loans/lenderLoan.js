@@ -2,20 +2,15 @@ import { LoanBox } from "@/componenets/LoanBox";
 import { Navbar } from "@/componenets/Navbar";
 import { GET_LOANS } from "@/utils/queries";
 import { useQuery, gql } from "@apollo/client";
-import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import styles from "../../styles/loans.module.css";
 
-export default function myLoans() {
-  const [noLoans, setNoLoans] = useState(false);
+export default function LenderLoan() {
   const { account, isWeb3Enabled } = useMoralis();
   console.log(account);
+  const loanType = 0;
 
   const { loading, error, data } = useQuery(GET_LOANS);
-
-  function updateNoLoans() {
-    setNoLoans(false);
-  }
 
   if (data) console.log(data);
   return (
@@ -23,7 +18,7 @@ export default function myLoans() {
       <Navbar />
 
       <div className={styles.topBar}>
-        <h3>My Loans</h3>
+        <h3>Lender Loans</h3>
         <p>Filter &gt;</p>
       </div>
 
@@ -32,7 +27,7 @@ export default function myLoans() {
         {error && <p>Error!Try Refreshing</p>}
         {data &&
           data.loans.map((loan, index) => {
-            if (loan.lender == account || loan.borrower == account)
+            if (loan.loan_type == loanType)
               return (
                 <LoanBox
                   index={index}

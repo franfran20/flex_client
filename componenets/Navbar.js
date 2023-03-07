@@ -21,10 +21,10 @@ export const Navbar = () => {
           <Link href="/loans/myLoans" className={styles.link}>
             my loans
           </Link>
-          <Link href="/" className={styles.link}>
+          <Link href="/loans/lenderLoan" className={styles.link}>
             lender loans
           </Link>
-          <Link href="/" className={styles.link}>
+          <Link href="/loans/borrowerLoan" className={styles.link}>
             borrower loans
           </Link>
           <Link href="/propose" className={styles.propose}>
