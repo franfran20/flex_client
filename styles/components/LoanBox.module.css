@@ -1,0 +1,17 @@
+.loanBoxEven {
+  background-color: #fff;
+  width: 20%;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.loanBoxOdd {
+  background-color: #0f3210;
+  width: 20%;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.loanBox h3 {
+  color: #0a9a00;
+}

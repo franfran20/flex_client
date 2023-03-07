@@ -1,0 +1,26 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+}
+.hero .text {
+  margin-bottom: -200px;
+}
+
+.hero .text h2 {
+  color: #fff;
+  font-size: 70px;
+  margin: 0px 8px;
+}
+
+.hero .text p {
+  color: #20f903;
+  font-size: 20px;
+  width: 70%;
+}
+
+.hero img {
+  width: 50%;
+  height: auto;
+}

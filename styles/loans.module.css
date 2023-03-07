@@ -1,0 +1,24 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+}
+
+.topBar p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.topBar h3 {
+  color: #20f903;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.loans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
