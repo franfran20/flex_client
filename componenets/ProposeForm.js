@@ -1,6 +1,6 @@
 import { ERC20_ABI, FLEX_CORE_ABI } from "@/utils/abi";
 import { FLEX_CORE_ADDRESS, EMPTY_ADDRESS } from "@/utils/Addresses";
-import { ASSETS, convertToWei } from "@/utils/assets";
+import { ASSETS, ASSET_ADDRESS_TO_NAME, convertToWei } from "@/utils/assets";
 import { useState } from "react";
 import { useWeb3Contract } from "react-moralis";
 import styles from "../styles/components/forms/ProposeForm.module.css";
@@ -47,7 +47,14 @@ export const ProposeForm = ({ loanType }) => {
       _collateral_deposit:
         loanType == 1 ? convertToWei(borrowOrCollateralAmount) : 0,
     },
-    msgValue: principalType == 0 && convertToWei(borrowOrCollateralAmount),
+    msgValue:
+      loanType == 0
+        ? ASSET_ADDRESS_TO_NAME[principalType] == EMPTY_ADDRESS
+          ? convertToWei(borrowOrCollateralAmount)
+          : 0
+        : ASSET_ADDRESS_TO_NAME[collateralType] == EMPTY_ADDRESS
+        ? convertToWei(borrowOrCollateralAmount)
+        : 0,
   });
 
   const {

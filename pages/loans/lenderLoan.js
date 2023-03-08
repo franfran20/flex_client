@@ -1,3 +1,4 @@
+import { DropDownFilter } from "@/componenets/DropDownFilter";
 import { LoanBox } from "@/componenets/LoanBox";
 import { Navbar } from "@/componenets/Navbar";
 import { GET_LOANS } from "@/utils/queries";
@@ -19,7 +20,7 @@ export default function LenderLoan() {
 
       <div className={styles.topBar}>
         <h3>Lender Loans</h3>
-        <p>Filter &gt;</p>
+        <DropDownFilter />
       </div>
 
       <div className={styles.loans}>

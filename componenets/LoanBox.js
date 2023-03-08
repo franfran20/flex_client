@@ -25,28 +25,34 @@ export const LoanBox = ({
         <div className={styles.tidy}>
           <div className={styles.one}>
             <h4>Collateral Type</h4>
-            <p>{ASSET_ADDRESS_TO_NAME[collateraltype.toLowerCase()]}</p>
+            <p>
+              {collateraltype &&
+                ASSET_ADDRESS_TO_NAME[collateraltype.toLowerCase()]}
+            </p>
           </div>
           <div className={styles.two}>
             <h4>Principal Type</h4>
-            <p>{ASSET_ADDRESS_TO_NAME[principalType.toLowerCase()]}</p>
+            <p>
+              {principalType &&
+                ASSET_ADDRESS_TO_NAME[principalType.toLowerCase()]}
+            </p>
           </div>
         </div>
         <div className={styles.tidy}>
           <div className={styles.three}>
             <h4>Interest Rate</h4>
-            <p>{interest}</p>
+            <p>{interest && interest}</p>
           </div>
           <div className={styles.four}>
             <h4>Margin CutOff</h4>
-            <p>{marginCutoff}</p>
+            <p>{marginCutoff && marginCutoff}</p>
           </div>
         </div>
 
         <div className={styles.tidy}>
           <div className={styles.four}>
             <h4>Collateral Ratio</h4>
-            <p>{collateralRatio}</p>
+            <p>{collateralRatio && collateralRatio}</p>
           </div>
           <div className={styles.five}>
             <h4>Time</h4>

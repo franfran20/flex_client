@@ -36,9 +36,16 @@ const STATE_BYTES_TO_STRING = {
     "DEACTIVATED",
 };
 
-export function truncateAddr(address) {
+function truncateAddr(address) {
   return address.slice(0, 6) + "..." + address.slice(-4);
 }
+
+const PROPOSAL_TO_TYPE = {
+  "0x99a5d6859b0c66cff71493dc84824002575310b68671fd4aace0cbdf15e29bec":
+    "LENDER",
+  "0xc2583d3538f67d1b2845fb700d1f33565dcd7d546e2d892b1c651d8da49d693c":
+    "BORROWER",
+};
 
 module.exports = {
   ASSETS,
@@ -50,4 +57,5 @@ module.exports = {
   DEACTIVATED,
   STATE_BYTES_TO_STRING,
   truncateAddr,
+  PROPOSAL_TO_TYPE,
 };

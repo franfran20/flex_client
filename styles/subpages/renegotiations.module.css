@@ -1,0 +1,30 @@
+.subTitle {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.renegotiations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.renegotiations a {
+  background-color: #0a9a00;
+  width: 15%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.renegotiations h3 {
+  font-size: 18px;
+  color: #20f903;
+}
+
+.renegotiations p {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}

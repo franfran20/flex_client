@@ -7,11 +7,11 @@
 }
 
 .loanGraphics {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+  /* padding-left: 60px; */
 }
 
 .openedLoan h3 {
@@ -24,4 +24,39 @@
 
 .loans {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loans h3 {
+  font-size: 35px;
+  width: 50%;
+  margin: 8px 0px;
+}
+
+.loans button {
+  padding: 12px 22px;
+  background-color: #20f903;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.proposedNewTerms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 60px 0px;
+}
+
+.buyouts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }

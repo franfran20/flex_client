@@ -1,0 +1,63 @@
+.proposeNewTerms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.text {
+  width: 50%;
+}
+
+.text img {
+  width: 40%;
+  height: auto;
+}
+
+.text h3 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.text p {
+  font-size: 16px;
+  color: #fff;
+  width: 80%;
+}
+
+.proposeForm {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 40%;
+  padding: 30px 20px;
+}
+
+.proposeForm div p {
+  color: #0a9a00;
+  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.proposeForm div input {
+  background-color: #e5efe4;
+  border: none;
+  font-size: 16px;
+  padding: 8px 4px;
+}
+
+.proposeForm div input:focus {
+  outline: none;
+}
+
+.proposeNewTermsButton {
+  padding: 12px 22px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  margin-top: 30px;
+}

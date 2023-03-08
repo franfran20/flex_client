@@ -1,0 +1,115 @@
+.openedRenegotiation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.twoLoans {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.loans {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.loans h3 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.accept {
+  padding: 12px 17px;
+  background-color: #20f903;
+  color: #0f3210;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 2px;
+  margin-bottom: 24px;
+  border: none;
+}
+
+.changeTerms {
+  padding: 12px 17px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 2px;
+  border: none;
+  margin-top: 20px;
+}
+
+.chatSection {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.topBar {
+  background-color: #fff;
+  height: 10%;
+  padding: 10px 20px;
+}
+
+.topBar h4 {
+  color: #20f903;
+}
+
+.topBar span {
+  color: #0f3210;
+}
+
+.chat {
+  background-color: #0f3210;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.send {
+  height: 10%;
+  background-color: #fff;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.send input {
+  background-color: #cbd4ca;
+  border: none;
+  font-size: 16px;
+  padding: 10px 4px;
+  width: 60%;
+}
+
+.send button {
+  padding: 12px 22px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 16px;
+  border: none;
+  margin: 10px;
+}
+
+.requiredPrincipleOrCollateral p {
+  font-size: 24px;
+  color: #fff;
+}
+
+.requiredPrincipleOrCollateral span {
+  font-size: 20px;
+  color: #20f903;
+}
