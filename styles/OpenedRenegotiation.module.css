@@ -77,6 +77,32 @@
   background-color: #0f3210;
   height: 80%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chat .lender {
+  padding: 10px 20px;
+  color: #0f3210;
+
+  width: 40%;
+  border-radius: 10px;
+  background-color: #20f903;
+  font-size: 18px;
+  margin: 15px;
+  position: relative;
+  left: 50%;
+}
+
+.chat .borrower {
+  background-color: #fff;
+  color: #0f3210;
+  padding: 10px 20px;
+  font-size: 18px;
+  width: 40%;
+  border-radius: 10px;
+  margin: 15px;
 }
 
 .send {

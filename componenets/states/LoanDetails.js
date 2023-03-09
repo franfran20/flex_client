@@ -87,7 +87,7 @@ export const LoanDetails = ({
     },
   });
 
-  const { runContractFunction: accept } = useWeb3Contract({
+  const { runContractFunction: accept, error: err } = useWeb3Contract({
     abi: FLEX_CORE_ABI,
     contractAddress: FLEX_CORE_ADDRESS,
     functionName: "accept_loan_terms",
@@ -104,6 +104,8 @@ export const LoanDetails = ({
         ? collateralOrPrincipalRequired
         : 0,
   });
+  console.log(err);
+  console.log(approveAmount);
 
   const { runContractFunction: approve } = useWeb3Contract({
     abi: ERC20_ABI,

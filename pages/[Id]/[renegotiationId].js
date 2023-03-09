@@ -148,6 +148,9 @@ export default function OpenedRenegotiation() {
     let loan_state = await loan_details.state;
     setLoanState(loan_state);
 
+    let loan_type = await loan_details.loan_type;
+    setLoanType(loan_type);
+
     // RENEGOTIATED renegotiated_loan_details
     let renegotiated_collateral_ratio =
       await renegotiated_loan_details.collateral_ratio;
@@ -171,6 +174,9 @@ export default function OpenedRenegotiation() {
       UpdateUI();
     } else enableWeb3();
   }, [isWeb3Enabled]);
+
+  console.log(renegotiationId);
+  console.log(data);
 
   return (
     <main>
@@ -208,56 +214,34 @@ export default function OpenedRenegotiation() {
             />
 
             <div>
-              {loanState == PROPOSED && loanType == 0 && account
-                ? account == lender && (
-                    <button
-                      className={styles.accept}
-                      onClick={() => acceptRenegotiation()}
-                    >
-                      Accept
-                    </button>
-                  )
-                : account == borrower && (
-                    <button
-                      className={styles.accept}
-                      onClick={() => acceptRenegotiation()}
-                    >
-                      Accept
-                    </button>
-                  )}
+              <button
+                className={styles.accept}
+                onClick={() => acceptRenegotiation()}
+              >
+                Accept
+              </button>
             </div>
 
             <div>
-              {loanType == 0 && account
-                ? account == borrower && (
-                    <Link
-                      href="/subpages/changeRenegotiationTerms"
-                      className={styles.changeTerms}
-                    >
-                      Change Renegotiation Terms
-                    </Link>
-                  )
-                : account == lender && (
-                    <Link
-                      href="/subpages/changeRenegotiationTerms"
-                      className={styles.changeTerms}
-                    >
-                      Change Renegotiation Terms
-                    </Link>
-                  )}
+              <Link
+                href="/subpages/changeRenegotiationTerms"
+                className={styles.changeTerms}
+              >
+                Change Renegotiation Terms
+              </Link>
             </div>
 
             <div className={styles.requiredPrincipleOrCollateral}>
               {loanType == 0 ? (
                 <p>
-                  <span>Principal Received :</span>{" "}
+                  <span>Collateral To Deposit :</span>{" "}
                   {collateralRequiredOrPrincipalReceived &&
                     (collateralRequiredOrPrincipalReceived / 10 ** 18).toFixed(
                       2
                     )}{" "}
                   {loanDetails &&
                     ASSET_ADDRESS_TO_NAME[
-                      loanDetails.principal_type.toLowerCase()
+                      loanDetails.collateral_type.toLowerCase()
                     ]}
                 </p>
               ) : (
