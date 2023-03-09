@@ -1,10 +1,12 @@
+import LenderLoan from "@/pages/loans/lenderLoan";
 import { FLEX_CORE_ABI } from "@/utils/abi";
 import { FLEX_CORE_ADDRESS } from "@/utils/Addresses";
 import { truncateAddr } from "@/utils/assets";
-import { useWeb3Contract } from "react-moralis";
+import { useMoralis, useWeb3Contract } from "react-moralis";
 import styles from "../styles/components/BuyOut.module.css";
 
 export const BuyOut = ({ buyer, buyoutAmount, loanId }) => {
+  const { account } = useMoralis();
   const { runContractFunction: buyOut } = useWeb3Contract({
     abi: FLEX_CORE_ABI,
     contractAddress: FLEX_CORE_ADDRESS,
@@ -44,11 +46,13 @@ export const BuyOut = ({ buyer, buyoutAmount, loanId }) => {
         </button>
       </div>
 
-      <div>
-        <button className={styles.cancel} onClick={() => cancelBuyout()}>
-          Cancel
-        </button>
-      </div>
+      {account && buyer && account == buyer.toLowerCase() && (
+        <div>
+          <button className={styles.cancel} onClick={() => cancelBuyout()}>
+            Cancel
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.allDetails div {
+  margin-top: 10px;
+}
+
 .collateralRequired {
   display: flex;
 }
@@ -63,6 +67,7 @@
   border-radius: 8px;
   text-decoration: none;
   font-size: 15px;
+  margin-top: -20px;
   border: none;
 }
 
@@ -97,17 +102,18 @@
 }
 
 .renegotiateAndDeactivate button {
-  margin: 10px;
 }
 
 .renego {
-  padding: 12px 22px;
+  padding: 12px 12px;
   background-color: #0f3210;
   color: #20f903;
   border-radius: 8px;
   text-decoration: none;
   font-size: 18px;
   border: none;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
 .deactivate {
@@ -118,7 +124,7 @@
   text-decoration: none;
   font-size: 18px;
   border: none;
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
 .change {
@@ -129,7 +135,8 @@
   text-decoration: none;
   font-size: 18px;
   border: none;
-  margin: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .repayAndProposeNewTerms {
@@ -179,6 +186,7 @@
   font-size: 18px;
   border: none;
   margin-right: 10px;
+  height: 25px;
 }
 
 .liquidate {

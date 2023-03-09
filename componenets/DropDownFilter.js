@@ -1,20 +1,45 @@
 import { useState } from "react";
 import styles from "../styles/components/DropDownFilter.module.css";
+import { PROPOSED, ACCEPTED, FULFILLED } from "@/utils/assets";
 
-export const DropDownFilter = () => {
-  const [clicked, setClicked] = useState();
+export const DropDownFilter = ({ setState }) => {
+  const [clicked, setClicked] = useState(false);
+
+  function setLoanStateFilter(state) {
+    setState(state);
+  }
+
   return (
-    <div class={styles.dropdown}>
+    <div className={styles.dropDown}>
       <button
         onClick={() => setClicked((prev) => !prev)}
-        class={styles.dropbtn}
+        className={styles.dropbtn}
       >
-        Dropdown
+        Filter &gt;
       </button>
-      <div class={styles.dropdownContent}>
-        <button>Link 1</button>
-        <button>Link 2</button>
-        <button>Link 3</button>
+
+      <div className={clicked ? styles.showFilters : styles.hideFilters}>
+        <button
+          onClick={() => {
+            setLoanStateFilter(PROPOSED);
+          }}
+        >
+          proposed
+        </button>
+        <button
+          onClick={() => {
+            setLoanStateFilter(ACCEPTED);
+          }}
+        >
+          accepted
+        </button>
+        <button
+          onClick={() => {
+            setLoanStateFilter(FULFILLED);
+          }}
+        >
+          fulfilled
+        </button>
       </div>
     </div>
   );

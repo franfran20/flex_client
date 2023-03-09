@@ -217,12 +217,25 @@ export const LoanDetails = ({
           <button className={styles.repay} onClick={() => repay()}>
             Repay
           </button>
-          <Link
-            href="/subpages/proposeNewTerms"
-            className={styles.proposeNewTerms}
-          >
-            Propsoe New Terms
-          </Link>
+          {account
+            ? lenderAddress &&
+              lenderAddress.toLowerCase() == account && (
+                <Link
+                  href="/subpages/proposeNewTerms"
+                  className={styles.proposeNewTerms}
+                >
+                  Propsoe New Terms
+                </Link>
+              )
+            : borrowerAddress &&
+              borrowerAddress.toLowerCase == account && (
+                <Link
+                  href="/subpages/proposeNewTerms"
+                  className={styles.proposeNewTerms}
+                >
+                  Propsoe New Terms
+                </Link>
+              )}
         </div>
       )}
 
@@ -265,6 +278,11 @@ export const LoanDetails = ({
                   }}
                 ></div>
               )}
+            </div>
+
+            <div>
+              <h4>Time Left</h4>
+              <p>Perform And Display The Time Lef Calc.</p>
             </div>
           </>
         )}
@@ -358,16 +376,19 @@ export const LoanDetails = ({
         </div>
       )}
 
-      <Link href={`/renegotiations/${loanId}`} className={styles.renego}>
-        View All Renegotiations
-      </Link>
-
       {loanType == 0
         ? lenderAddress.toLowerCase() == account &&
           STATE_BYTES_TO_STRING[loanState] == "PROPOSED" && (
             <div className={styles.changeTermsAndRenego}>
               <Link href="/subpages/changeLoanTerms" className={styles.change}>
                 Change Terms
+              </Link>
+
+              <Link
+                href={`/renegotiations/${loanId}`}
+                className={styles.renego}
+              >
+                View All Renegotiations
               </Link>
             </div>
           )

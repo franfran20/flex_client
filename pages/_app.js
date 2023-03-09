@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://api.thegraph.com/subgraphs/name/franfran20/flexx",
+  uri: " https://api.thegraph.com/subgraphs/name/franfran20/flexxx",
   cache: new InMemoryCache(),
 });
 

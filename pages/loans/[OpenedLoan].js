@@ -12,7 +12,7 @@ import { EMPTY_ADDRESS, FLEX_CORE_ADDRESS } from "@/utils/Addresses";
 import { useMoralis, useWeb3Contract } from "react-moralis";
 import { LoanDetails } from "@/componenets/states/LoanDetails";
 import { useQuery } from "@apollo/client";
-import { PROPOSAL_TO_TYPE } from "@/utils/assets";
+import { ACCEPTED, PROPOSAL_TO_TYPE } from "@/utils/assets";
 import { BuyOut } from "@/componenets/BuyOut";
 
 export default function OpenedLoan() {
@@ -38,7 +38,7 @@ export default function OpenedLoan() {
   const [collateralAmount, setCollateralAmount] = useState();
   const [principalAmount, setPrincipalAmount] = useState();
   const [debt, setDebt] = useState();
-  const [selectedLoanBuyouts, setSelectedLoanBuyouts] = useState([]);
+  const [loanState, setLoanState] = useState();
 
   const { isWeb3Enabled, enableWeb3 } = useMoralis();
 
@@ -85,6 +85,8 @@ export default function OpenedLoan() {
     setPrincipalAmount(prin_amount);
     let debt = await loan_details.current_debt;
     setDebt(debt);
+    let loan_state = await loan_details.state;
+    setLoanState(loan_state);
   }
 
   useEffect(() => {
@@ -132,7 +134,7 @@ export default function OpenedLoan() {
                   accessControl={loanDetails.access_control}
                   timeLimit={loanDetails.time_limit}
                   timePeriod={timePeriod}
-                  loanState={loanDetails.state}
+                  loanState={loanState}
                   collateralAmount={collateralAmount}
                   principalAmount={principalAmount}
                   debt={debt}
@@ -141,7 +143,6 @@ export default function OpenedLoan() {
             </>
           )}
         </div>
-
         {loanDetails && (
           <div className={styles.proposedNewTerms}>
             <div className={styles.borrower}>
@@ -205,21 +206,25 @@ export default function OpenedLoan() {
           </div>
         )}
 
-        <div>
-          <h3>Proposed Buyouts</h3>
-          <div className={styles.buyouts}>
-            {proposedBuyouts &&
-              proposedBuyouts.buyOuts.map((item) => {
-                return (
-                  <BuyOut
-                    loanId={selectedLoanId}
-                    buyer={item.buyer}
-                    buyoutAmount={item.buyout_amount}
-                  />
-                );
-              })}
-          </div>
-        </div>
+        {loanState == ACCEPTED &&
+          proposedBuyouts &&
+          proposedBuyouts.buyOuts.length > 0 && (
+            <div>
+              <h3>Proposed Buyouts</h3>
+              <div className={styles.buyouts}>
+                {proposedBuyouts &&
+                  proposedBuyouts.buyOuts.map((item) => {
+                    return (
+                      <BuyOut
+                        loanId={selectedLoanId}
+                        buyer={item.buyer}
+                        buyoutAmount={item.buyout_amount}
+                      />
+                    );
+                  })}
+              </div>
+            </div>
+          )}
       </div>
     </main>
   );

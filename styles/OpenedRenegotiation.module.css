@@ -19,6 +19,10 @@
   margin-top: 10px;
 }
 
+.loans div {
+  margin-bottom: 10px;
+}
+
 .loans h3 {
   color: #fff;
   font-size: 20px;
@@ -32,7 +36,7 @@
   text-decoration: none;
   font-size: 18px;
   margin: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   border: none;
 }
 
@@ -106,6 +110,7 @@
 
 .requiredPrincipleOrCollateral p {
   font-size: 24px;
+  margin: 5px;
   color: #fff;
 }
 

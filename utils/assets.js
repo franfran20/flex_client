@@ -5,6 +5,13 @@ const ASSETS = {
   3: { name: "Usdt", address: "0xE14B4e52d15a3704502096b5aF28D4e2cd83Fb70" },
 };
 
+const ASSET_NUMBER_TO_ADDRESS = {
+  0: "0x0000000000000000000000000000000000000000",
+  1: "0x476cfd8523e767ea40eb094aac07d9a2e5f17ef1",
+  2: "0xfaFedb041c0DD4fA2Dc0d87a6B0979Ee6FA7af5F",
+  3: "0xE14B4e52d15a3704502096b5aF28D4e2cd83Fb70",
+};
+
 const ASSET_ADDRESS_TO_NAME = {
   "0x0000000000000000000000000000000000000000": "FTM",
   "0x476cfd8523e767ea40eb094aac07d9a2e5f17ef1": "FLEX",
@@ -36,6 +43,12 @@ const STATE_BYTES_TO_STRING = {
     "DEACTIVATED",
 };
 
+const STATE_NUMBER_TO_STRING = {
+  0: "PROPOSED",
+  1: "ACCEPTED",
+  2: "FULFILLLED",
+};
+
 function truncateAddr(address) {
   return address.slice(0, 6) + "..." + address.slice(-4);
 }
@@ -50,6 +63,7 @@ const PROPOSAL_TO_TYPE = {
 module.exports = {
   ASSETS,
   ASSET_ADDRESS_TO_NAME,
+  STATE_NUMBER_TO_STRING,
   convertToWei,
   PROPOSED,
   ACCEPTED,
@@ -57,5 +71,6 @@ module.exports = {
   DEACTIVATED,
   STATE_BYTES_TO_STRING,
   truncateAddr,
+  ASSET_NUMBER_TO_ADDRESS,
   PROPOSAL_TO_TYPE,
 };

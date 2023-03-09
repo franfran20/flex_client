@@ -2,7 +2,7 @@ import { LoanBox } from "@/componenets/LoanBox";
 import { Navbar } from "@/componenets/Navbar";
 import { FLEX_CORE_ABI } from "@/utils/abi";
 import { EMPTY_ADDRESS, FLEX_CORE_ADDRESS } from "@/utils/Addresses";
-import { ASSET_ADDRESS_TO_NAME, convertToWei } from "@/utils/assets";
+import { ASSET_ADDRESS_TO_NAME, convertToWei, PROPOSED } from "@/utils/assets";
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,7 +14,7 @@ import { GET_CHAT } from "../../utils/queries";
 export default function OpenedRenegotiation() {
   const router = useRouter();
   const { Id: selectedLoanId, renegotiationId } = router.query;
-  const { isWeb3Enabled, enableWeb3 } = useMoralis();
+  const { isWeb3Enabled, enableWeb3, account } = useMoralis();
 
   const { loading, error, data } = useQuery(GET_CHAT);
 
@@ -28,6 +28,7 @@ export default function OpenedRenegotiation() {
   const [collateralType, setCollateralType] = useState();
   const [principalType, setPrincipalType] = useState();
   const [debt, setDebt] = useState();
+  const [loanState, setLoanState] = useState();
 
   const [renegotiatedLoanDetails, setRenegotiatedoanDetails] = useState();
   const [renegotiatedInterest, setRenegotiatedInterest] = useState();
@@ -35,6 +36,10 @@ export default function OpenedRenegotiation() {
   const [renegotiatedCollateralRatio, setRenegotiatedCollateralRatio] =
     useState();
   const [renegotiatedTimePeriod, setRenegotiatedTimePeriod] = useState();
+  const [lender, setLender] = useState();
+  const [borrower, setBorrower] = useState();
+
+  console.log(lender, borrower, account);
 
   const [
     collateralRequiredOrPrincipalReceived,
@@ -140,6 +145,8 @@ export default function OpenedRenegotiation() {
     setTimePeriod(time_period);
     let coll_amount = await loan_details.collateral_deposited;
     setCollateralAmount(coll_amount);
+    let loan_state = await loan_details.state;
+    setLoanState(loan_state);
 
     // RENEGOTIATED renegotiated_loan_details
     let renegotiated_collateral_ratio =
@@ -153,6 +160,10 @@ export default function OpenedRenegotiation() {
     setRenegotiatedMarginCutoff(renegotiated_margin_cutoff.toString());
     let renegotiated_time_period = await renegotiated_loan_details.time_amount;
     setRenegotiatedTimePeriod(renegotiated_time_period);
+    let borrower_address = await renegotiated_loan_details.borrower;
+    setBorrower(borrower_address.toLowerCase());
+    let lender_address = await renegotiated_loan_details.lender;
+    setLender(lender_address.toLowerCase());
   }
 
   useEffect(() => {
@@ -197,21 +208,43 @@ export default function OpenedRenegotiation() {
             />
 
             <div>
-              <button
-                className={styles.accept}
-                onClick={() => acceptRenegotiation()}
-              >
-                Accept
-              </button>
+              {loanState == PROPOSED && loanType == 0 && account
+                ? account == lender && (
+                    <button
+                      className={styles.accept}
+                      onClick={() => acceptRenegotiation()}
+                    >
+                      Accept
+                    </button>
+                  )
+                : account == borrower && (
+                    <button
+                      className={styles.accept}
+                      onClick={() => acceptRenegotiation()}
+                    >
+                      Accept
+                    </button>
+                  )}
             </div>
 
             <div>
-              <Link
-                href="/subpages/changeRenegotiationTerms"
-                className={styles.changeTerms}
-              >
-                Change Renegotiation Terms
-              </Link>
+              {loanType == 0 && account
+                ? account == borrower && (
+                    <Link
+                      href="/subpages/changeRenegotiationTerms"
+                      className={styles.changeTerms}
+                    >
+                      Change Renegotiation Terms
+                    </Link>
+                  )
+                : account == lender && (
+                    <Link
+                      href="/subpages/changeRenegotiationTerms"
+                      className={styles.changeTerms}
+                    >
+                      Change Renegotiation Terms
+                    </Link>
+                  )}
             </div>
 
             <div className={styles.requiredPrincipleOrCollateral}>

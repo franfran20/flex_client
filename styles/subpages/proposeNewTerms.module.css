@@ -61,3 +61,26 @@
   border: none;
   margin-top: 30px;
 }
+
+.approve {
+  margin: 10px 0px;
+}
+
+.approve input {
+  background-color: #e5efe4;
+  border: none;
+  font-size: 16px;
+  padding: 8px 4px;
+  margin-right: 20px;
+}
+
+.approve button {
+  padding: 12px 18px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none;
+  margin-top: 30px;
+}

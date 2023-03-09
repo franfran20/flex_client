@@ -1,6 +1,11 @@
 import { ERC20_ABI, FLEX_CORE_ABI } from "@/utils/abi";
 import { FLEX_CORE_ADDRESS, EMPTY_ADDRESS } from "@/utils/Addresses";
-import { ASSETS, ASSET_ADDRESS_TO_NAME, convertToWei } from "@/utils/assets";
+import {
+  ASSETS,
+  ASSET_ADDRESS_TO_NAME,
+  ASSET_NUMBER_TO_ADDRESS,
+  convertToWei,
+} from "@/utils/assets";
 import { useState } from "react";
 import { useWeb3Contract } from "react-moralis";
 import styles from "../styles/components/forms/ProposeForm.module.css";
@@ -49,13 +54,15 @@ export const ProposeForm = ({ loanType }) => {
     },
     msgValue:
       loanType == 0
-        ? ASSET_ADDRESS_TO_NAME[principalType] == EMPTY_ADDRESS
+        ? ASSET_NUMBER_TO_ADDRESS[principalType] == EMPTY_ADDRESS
           ? convertToWei(borrowOrCollateralAmount)
           : 0
-        : ASSET_ADDRESS_TO_NAME[collateralType] == EMPTY_ADDRESS
+        : ASSET_NUMBER_TO_ADDRESS[collateralType] == EMPTY_ADDRESS
         ? convertToWei(borrowOrCollateralAmount)
         : 0,
   });
+
+  console.log("principal type", principalType);
 
   const {
     error: approveError,
