@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useMoralis, useWeb3Contract } from "react-moralis";
 import styles from "../styles/faucet.module.css";
 
-export default function faucet() {
+export default function Faucet() {
   const [flexAmount, setFlexAmount] = useState();
   const [usdtAmount, setUsdtAmount] = useState();
   const { account } = useMoralis();

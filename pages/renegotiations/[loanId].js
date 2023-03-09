@@ -5,7 +5,7 @@ import { useQuery, gql } from "@apollo/client";
 import styles from "../../styles/subpages/renegotiations.module.css";
 import Link from "next/link";
 
-export default function renegotiation() {
+export default function Renegotiation() {
   const router = useRouter();
   const { loanId } = router.query;
 
@@ -23,9 +23,12 @@ export default function renegotiation() {
 
       <div className={styles.renegotiations}>
         {data &&
-          data.renegotiatedLoans.map((renegotiation) => {
+          data.renegotiatedLoans.map((renegotiation, index) => {
             return (
-              <Link href={`/${loanId}/${renegotiation.user_custom_id}`}>
+              <Link
+                href={`/${loanId}/${renegotiation.user_custom_id}`}
+                key={index}
+              >
                 <h3>Re-Negotiation ID</h3>
                 <p>{renegotiation.user_custom_id}</p>
               </Link>

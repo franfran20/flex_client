@@ -9,7 +9,7 @@ import { useMoralis, useWeb3Contract } from "react-moralis";
 import { useQuery, gql } from "@apollo/client";
 import styles from "../../styles/subpages/proposeNewTerms.module.css";
 
-export default function proposeBuyout() {
+export default function ProposeBuyout() {
   const [loanId, setLoanId] = useState();
   const [buyoutAmount, setBuyoutAmount] = useState();
   const [approveAmount, setApproveAmount] = useState();
@@ -81,8 +81,8 @@ export default function proposeBuyout() {
           />
           <h3>Propose Buyout</h3>
           <p>
-            Propose To buyout a loan that you're interested in from a particular
-            lender and pay the lender off for the loan.
+            Propose To buyout a loan that you are interested in from a
+            particular lender and pay the lender off for the loan.
           </p>
         </div>
 

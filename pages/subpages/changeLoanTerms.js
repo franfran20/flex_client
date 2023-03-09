@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useMoralis, useWeb3Contract } from "react-moralis";
 import styles from "../../styles/subpages/proposeNewTerms.module.css";
 
-export default function onChangeLoanTerms() {
+export default function ChangeLoanTerms() {
   const [loanId, setLoanId] = useState();
   const [buyoutAmount, setBuyoutAmount] = useState();
   const [approveAmount, setApproveAmount] = useState();

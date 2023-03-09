@@ -273,17 +273,21 @@ export default function OpenedRenegotiation() {
 
           <div className={styles.chat}>
             {data &&
-              data.chatPusheds.map((chat) => {
+              data.chatPusheds.map((chat, index) => {
                 if (chat.user_custom_id == renegotiationId) {
                   if (chat.lender_or_borrower == 0) {
                     return (
-                      <div className={styles.lender}>{chat.messageURI}</div>
+                      <div className={styles.lender} key={index}>
+                        {chat.messageURI}
+                      </div>
                     );
                   }
 
                   if (chat.lender_or_borrower == 1) {
                     return (
-                      <div className={styles.borrower}>{chat.messageURI}</div>
+                      <div className={styles.borrower} key={index}>
+                        {chat.messageURI}
+                      </div>
                     );
                   }
                 }

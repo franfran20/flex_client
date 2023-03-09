@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useWeb3Contract } from "react-moralis";
 import styles from "../../styles/subpages/proposeNewTerms.module.css";
 
-export default function changeRenegotiationTerms() {
+export default function ChangeRenegotiationTerms() {
   const [loanId, setLoanId] = useState();
   const [marginCutoff, setMarginCutoff] = useState();
   const [interest, setInterest] = useState();

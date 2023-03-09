@@ -8,7 +8,7 @@ import { useWeb3Contract } from "react-moralis";
 import { useQuery, gql } from "@apollo/client";
 import styles from "../../styles/subpages/proposeNewTerms.module.css";
 
-export default function renegotiate() {
+export default function Renegotiate() {
   const [loanId, setLoanId] = useState();
   const [marginCutoff, setMarginCutoff] = useState();
   const [interest, setInterest] = useState();

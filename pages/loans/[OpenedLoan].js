@@ -147,16 +147,17 @@ export default function OpenedLoan() {
           <div className={styles.proposedNewTerms}>
             <div className={styles.borrower}>
               {data &&
-                data.proposedLoans.map((proposedLoan) => {
+                data.proposedLoans.map((proposedLoan, index) => {
                   if (proposedLoan.loan_id == selectedLoanId)
                     if (
                       PROPOSAL_TO_TYPE[proposedLoan.proposer_type] == "BORROWER"
                     ) {
                       console.log("datattt", data);
                       return (
-                        <div className={styles.loans}>
+                        <div className={styles.loans} key={index}>
                           <h3>New Terms Proposed By Borrower</h3>
                           <LoanBox
+                            key={index}
                             index={2}
                             loanId={proposedLoan.loan_id}
                             collateraltype={loanDetails.collateral_type.toLowerCase()}
@@ -177,15 +178,16 @@ export default function OpenedLoan() {
 
             <div className={styles.lender}>
               {data &&
-                data.proposedLoans.map((proposedLoan) => {
+                data.proposedLoans.map((proposedLoan, index) => {
                   if (proposedLoan.loan_id == selectedLoanId)
                     if (
                       PROPOSAL_TO_TYPE[proposedLoan.proposer_type] == "LENDER"
                     ) {
                       return (
-                        <div className={styles.loans}>
+                        <div className={styles.loans} key={index}>
                           <h3>New Terms Proposed By Lender</h3>
                           <LoanBox
+                            key={index}
                             index={2}
                             loanId={proposedLoan.loan_id}
                             collateraltype={loanDetails.collateralType}
@@ -213,9 +215,10 @@ export default function OpenedLoan() {
               <h3>Proposed Buyouts</h3>
               <div className={styles.buyouts}>
                 {proposedBuyouts &&
-                  proposedBuyouts.buyOuts.map((item) => {
+                  proposedBuyouts.buyOuts.map((item, index) => {
                     return (
                       <BuyOut
+                        key={index}
                         loanId={selectedLoanId}
                         buyer={item.buyer}
                         buyoutAmount={item.buyout_amount}
