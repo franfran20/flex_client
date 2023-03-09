@@ -27,6 +27,9 @@ export const Navbar = () => {
           <Link href="/loans/borrowerLoan" className={styles.link}>
             borrower loans
           </Link>
+          <Link href="/faucet" className={styles.link}>
+            faucet
+          </Link>
           <Link href="/propose" className={styles.propose}>
             propose loan
           </Link>

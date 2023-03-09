@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main div h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.main div input {
+  background-color: #e5efe4;
+  border: none;
+  font-size: 16px;
+  padding: 8px 4px;
+  margin-right: 20px;
+}
+
+.main div button {
+  padding: 12px 18px;
+  background-color: #0f3210;
+  color: #20f903;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none;
+  margin-top: 30px;
+}

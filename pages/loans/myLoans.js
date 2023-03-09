@@ -8,7 +8,7 @@ import { useMoralis } from "react-moralis";
 import styles from "../../styles/loans.module.css";
 
 export default function myLoans() {
-  const [loanState, setLoanState] = useState();
+  const [loanState, setLoanState] = useState(false);
   const { account, isWeb3Enabled } = useMoralis();
   console.log(account);
 

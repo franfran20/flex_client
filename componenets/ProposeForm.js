@@ -62,7 +62,7 @@ export const ProposeForm = ({ loanType }) => {
         : 0,
   });
 
-  console.log("principal type", principalType);
+  console.log("principal type", ASSET_NUMBER_TO_ADDRESS[principalType]);
 
   const {
     error: approveError,
